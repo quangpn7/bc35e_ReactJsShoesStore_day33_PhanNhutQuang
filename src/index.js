@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./main.css";
 import ProductList from "./ShoesStore/ProductList";
 import ShoesStore from "./ShoesStore/ShoesStore";
 

@@ -1,0 +1,14 @@
+.shoe_card {
+  transform: scale(1);
+  transition: all linear 0.2s;
+}
+.shoe_card:hover {
+  transform: scale(1.06);
+}
+.shoe_img {
+  transform: scale(1);
+  transition: all linear 0.3s;
+}
+.shoe_img:hover {
+  transform: scale(1.5);
+}

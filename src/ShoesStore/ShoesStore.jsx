@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Modal from "./Modal";
 import ProductList from "./ProductList";
 
 const products = [
@@ -144,11 +145,34 @@ const products = [
   },
 ];
 export default class ShoesStore extends Component {
+  state = {
+    productDetail: {
+      id: 12,
+      name: "Nike Air Max 270 React",
+      alias: "nike-air-max-270-react",
+      price: 750,
+      description:
+        "Nike shoe is the rare high-percentage shooter who's also a coach's dream on D. Designed for his unrivaled 2-way game, the PG 4 unveils a new cushioning system that's lightweight, articulated and responsive, ideal for players like PG who go hard every play.\r\n\r\n",
+      shortDescription: "Paul George is the rare high-percentage shooter",
+      quantity: 445,
+      image: "http://svcy3.myclass.vn/images/nike-air-max-270-react.png",
+    },
+  };
+  setStateModal = (product) => {
+    this.setState({
+      productDetail: product,
+    });
+  };
+
   render() {
     return (
       <div className="container">
         <h1 className="text-center">Shoes Shop</h1>
-        <ProductList productsData={products}></ProductList>
+        <ProductList
+          productsData={products}
+          setStateModal={this.setStateModal}
+        ></ProductList>
+        <Modal content={this.state.productDetail}></Modal>
       </div>
     );
   }
